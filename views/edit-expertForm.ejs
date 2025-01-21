@@ -1,0 +1,232 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/add-candidate/style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="right">
+      
+      <% if (typeof expert !== 'undefined' && expert) { %>
+      <form
+        class="row g-3 needs-validation"
+        novalidate
+        action="/update-expert/<%= expert._id %>"
+        method="POST"
+      >
+        <div class="col-md-4">
+          <label for="validationCustomFirstName" class="form-label">First name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="validationCustomFirstName"
+            name="firstname"
+            value="<%= expert.firstname %>"
+            required
+          />
+          <div class="valid-feedback">Looks good!</div>
+        </div>
+        <div class="col-md-4">
+          <label for="validationCustomLastName" class="form-label">Last name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="validationCustomLastName"
+            name="lastname"
+            value="<%= expert.lastname %>"
+            required
+          />
+          <div class="valid-feedback">Looks good!</div>
+        </div>
+        <div class="col-md-4">
+          <label for="validationCustomId" class="form-label">ID</label>
+          <div class="input-group has-validation">
+            <span class="input-group-text" id="inputGroupPrepend">@</span>
+            <input
+              type="text"
+              class="form-control"
+              id="validationCustomId"
+              aria-describedby="inputGroupPrepend"
+              name="id"
+              value="<%= expert.id %>"
+              required
+            />
+            <div class="invalid-feedback">Please check the ID.</div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <label for="validationCustomDepartment" class="form-label">Department</label>
+          <select class="form-select" id="validationCustomDepartment" name="department" required>
+            <option selected disabled value="">Choose...</option>
+            <option value="AI" <%= expert.department === 'AI' ? 'selected' : '' %>>AI</option>
+            <option value="Cyber Security" <%= expert.department === 'Cyber Security' ? 'selected' : '' %>>Cyber Security</option>
+            <option value="Aeronautical Engineering" <%= expert.department === 'Aeronautical Engineering' ? 'selected' : '' %>>Aeronautical Engineering</option>
+            <option value="Electronics & Communication Engineering" <%= expert.department === 'Electronics & Communication Engineering' ? 'selected' : '' %>>Electronics & Communication Engineering</option>
+            <option value="Mechanical Engineering" <%= expert.department === 'Mechanical Engineering' ? 'selected' : '' %>>Mechanical Engineering</option>
+            <option value="Computer Science & Engineering" <%= expert.department === 'Computer Science & Engineering' ? 'selected' : '' %>>Computer Science & Engineering</option>
+            <option value="Electrical Engineering" <%= expert.department === 'Electrical Engineering' ? 'selected' : '' %>>Electrical Engineering</option>
+            <option value="Chemical Engineering" <%= expert.department === 'Chemical Engineering' ? 'selected' : '' %>>Chemical Engineering</option>
+            <option value="Material Science & Metallurgical Engineering" <%= expert.department === 'Material Science & Metallurgical Engineering' ? 'selected' : '' %>>Material Science & Metallurgical Engineering</option>
+            <option value="Physics" <%= expert.department === 'Physics' ? 'selected' : '' %>>Physics</option>
+            <option value="Chemistry" <%= expert.department === 'Chemistry' ? 'selected' : '' %>>Chemistry</option>
+            <option value="Naval Engineering" <%= expert.department === 'Naval Engineering' ? 'selected' : '' %>>Naval Engineering</option>
+            <option value="Civil Engineering" <%= expert.department === 'Civil Engineering' ? 'selected' : '' %>>Civil Engineering</option>
+            <option value="Robotics & Automation" <%= expert.department === 'Robotics & Automation' ? 'selected' : '' %>>Robotics & Automation</option>
+            <option value="Information Technology (IT)" <%= expert.department === 'Information Technology (IT)' ? 'selected' : '' %>>Information Technology (IT)</option>
+            <option value="Biotechnology" <%= expert.department === 'Biotechnology' ? 'selected' : '' %>>Biotechnology</option>
+            <option value="Instrumentation & Control Engineering" <%= expert.department === 'Instrumentation & Control Engineering' ? 'selected' : '' %>>Instrumentation & Control Engineering</option>
+            <option value="Environmental Engineering" <%= expert.department === 'Environmental Engineering' ? 'selected' : '' %>>Environmental Engineering</option>
+            <option value="Human Resources" <%= expert.department === 'Human Resources' ? 'selected' : '' %>>Human Resources</option>
+            <option value="Finance & Accounts" <%= expert.department === 'Finance & Accounts' ? 'selected' : '' %>>Finance & Accounts</option>
+            <option value="Procurement & Supply Chain Management" <%= expert.department === 'Procurement & Supply Chain Management' ? 'selected' : '' %>>Procurement & Supply Chain Management</option>
+            <option value="Quality Assurance" <%= expert.department === 'Quality Assurance' ? 'selected' : '' %>>Quality Assurance</option>
+            <option value="Legal" <%= expert.department === 'Legal' ? 'selected' : '' %>>Legal</option>
+            <option value="Advanced Computing" <%= expert.department === 'Advanced Computing' ? 'selected' : '' %>>Advanced Computing</option>
+            <option value="Radar and Surveillance Systems" <%= expert.department === 'Radar and Surveillance Systems' ? 'selected' : '' %>>Radar and Surveillance Systems</option>
+            <option value="Space and Missile Systems" <%= expert.department === 'Space and Missile Systems' ? 'selected' : '' %>>Space and Missile Systems</option>
+            <option value="Nanotechnology" <%= expert.department === 'Nanotechnology' ? 'selected' : '' %>>Nanotechnology</option>
+            <option value="Weapon Systems Development" <%= expert.department === 'Weapon Systems Development' ? 'selected' : '' %>>Weapon Systems Development</option>
+          </select>
+          <div class="invalid-feedback">Please check the department</div>
+        </div>
+        
+        <div class="col-md-6">
+          <label for="validationCustomExpertise" class="form-label">Expertise</label>
+          <input
+            type="text"
+            class="form-control"
+            id="validationCustomExpertise"
+            name="expertise"
+            placeholder="Enter expertise separated by commas (e.g., Java, Python, C++)"
+            required
+            value="<%= expert.expertise ? expert.expertise.join(', ') : '' %>" />
+          <div class="invalid-feedback">Please provide their expertise.</div>
+        </div>
+        
+        <div class="col-md-3">
+          <label for="validationCustomAvailability" class="form-label"
+            >Availability</label
+          >
+          <select class="form-select" id="validationCustomAvailability" name="availability" required>
+            <option selected disabled value="">Choose...</option>
+            <option  value="Available" <%= expert.availability === 'Available' ? 'selected' : '' %>> Available</option>
+            <option value="Not Available" <%= expert.availability === 'Not Available' ? 'selected' : '' %>>Not Available</option>
+          </select>
+          <div class="invalid-feedback">
+            please check if the expert is available or not!
+          </div>
+        </div>
+        
+        
+        <div class="col-md-3">
+          <label for="validationCustomCategory" class="form-label"
+            >Category</label>
+          <select class="form-select" id="validationCustomCategory" name="category" required>
+            <option selected disabled value="">Choose...</option>
+            <option  value="drdo" <%= expert.availability === 'drdo' ? 'selected' : '' %>> DRDO</option>
+            <option  value="industry" <%= expert.availability === 'industry' ? 'selected' : '' %>> Industry</option>
+            <option value="academia" <%= expert.availability === 'academia' ? 'selected' : '' %>>Academia</option>
+          </select>
+          <div class="invalid-feedback">
+            please check if the expert's category'!
+          </div>
+        </div>
+        <div class="col-md-3">
+          <label for="validationCustomExperience" class="form-label">Professional Experience</label>
+          <select class="form-select" id="validationCustomExperience" name="experience" required>
+            <option disabled value="">Choose...</option>
+            
+            <option value="0.5" <%= expert.experience === '0.5 ' ? 'selected' : '' %>>0.5</option>
+            <option value="1" <%= expert.experience === '1' ? 'selected' : '' %>>1 </option>
+            <option value=" 2 " <%= expert.experience === ' 2 ' ? 'selected' : '' %>> 2</option>
+            <option value="3" <%= expert.experience === '3' ? 'selected' : '' %>>3</option>
+            <option value="4" <%= expert.experience === '4' ? 'selected' : '' %>>4</option>
+            <option value="5" <%= expert.experience === '5' ? 'selected' : '' %>>5</option>
+            <option value="6" <%= expert.experience === '6' ? 'selected' : '' %>>6</option>
+            <option value="7" <%= expert.experience === '7' ? 'selected' : '' %>>7</option>
+            <option value="8" <%= expert.experience === '8' ? 'selected' : '' %>>8</option>
+            <option value="9" <%= expert.experience === '9' ? 'selected' : '' %>>9</option>
+            <option value="10" <%= expert.experience === '10' ? 'selected' : '' %>>10</option>
+            <option value="11" <%= expert.experience === '11' ? 'selected' : '' %>>11</option>
+            <option value="12" <%= expert.experience === '12' ? 'selected' : '' %>>12</option>
+            <option value="13" <%= expert.experience === '13' ? 'selected' : '' %>>13</option>
+            <option value="14" <%= expert.experience === '14' ? 'selected' : '' %>>14</option>
+            <option value="15" <%= expert.experience === '15' ? 'selected' : '' %>>15</option>
+            <option value="16" <%= expert.experience === '16' ? 'selected' : '' %>>16</option>
+            <option value="17" <%= expert.experience === '17' ? 'selected' : '' %>>17</option>
+            <option value=" 18 " <%= expert.experience === '18' ? 'selected' : '' %>>18</option>
+            <option value="19" <%= expert.experience === '19' ? 'selected' : '' %>>19</option>
+            <option value="20" <%= expert.experience === '20' ? 'selected' : '' %>>20</option>
+            <option value="21" <%= expert.experience === '21' ? 'selected' : '' %>>21</option>
+            <option value="22" <%= expert.experience === '22' ? 'selected' : '' %>>22</option>
+            <option value="23" <%= expert.experience === '23' ? 'selected' : '' %>>23</option>
+            <option value="24" <%= expert.experience === '24' ? 'selected' : '' %>>24</option>
+            <option value="25" <%= expert.experience === '25' ? 'selected' : '' %>>25</option>
+            <option value="26" <%= expert.experience === '26' ? 'selected' : '' %>>26</option>
+          </select>
+          <div class="invalid-feedback">
+            Please check the expert's experience!
+          </div>
+        </div>
+        
+        <div class="col-12">
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              value=""
+              id="confirm invalidCheck"
+              required
+            />
+            <label class="form-check-label" for="invalidCheck"> confirm </label>
+            <div class="invalid-feedback">
+              You must agree before submitting.
+            </div>
+          </div>
+        </div>
+        <div class="col-12">
+         <button style="border-radius:10px" style="max-width:12px"> <a class="btn btn-primary"  type="submit" style="border-radius:10px">Save Changes</a></button>
+         <button style="border-radius:10px" style="max-width:12px"><a href="/experts-list" class="btn btn-secondary"> Cancel </a></button>
+        </div>
+      </form>
+      
+<% } else { %>
+  <p>Expert data not found.</p>
+<% } %>
+    </div>
+    <script>
+      (() => {
+        "use strict";
+
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        const forms = document.querySelectorAll(".needs-validation");
+
+        // Loop over them and prevent submission
+        Array.from(forms).forEach((form) => {
+          form.addEventListener(
+            "submit",
+            (event) => {
+              if (!form.checkValidity()) {
+                event.preventDefault();
+                event.stopPropagation();
+              }
+
+              form.classList.add("was-validated");
+            },
+            false
+          );
+        });
+      })();
+    </script>
+  </body>
+</html>
+

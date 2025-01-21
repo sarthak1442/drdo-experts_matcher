@@ -1,0 +1,44 @@
+{
+  "name": "drdo-recruitment-portal",
+  "version": "1.0.0",
+  "description": "A recruitment portal for DRDO to manage candidates, experts, and interview boards.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "keywords": [
+    "DRDO",
+    "recruitment",
+    "portal",
+    "interviews",
+    "candidates",
+    "experts"
+  ],
+  "author": "Sarthak",
+  "license": "MIT",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.20.3",
+    "connect-flash": "^0.1.1",
+    "connect-mongo": "^5.1.0",
+    "dotenv": "^16.4.5",
+    "drdo-recruitment-portal": "file:",
+    "ejs": "^3.1.10",
+    "express": "^5.0.0",
+    "express-session": "^1.18.0",
+    "method-override": "^3.0.0",
+    "mongoose": "^7.8.1",
+    "multer": "^1.4.5-lts.1",
+    "nodemailer": "^6.9.14",
+    "passport": "^0.6.0",
+    "passport-local": "^1.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  }
+}

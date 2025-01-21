@@ -1,0 +1,268 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/add-candidate/style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="right">
+      <% if (typeof candidate !== 'undefined' && candidate) { %>
+      <form class="row g-3 needs-validation" novalidate action="/update-candidate/<%= candidate._id %>"
+        method="POST">
+        <div class="col-md-4">
+          <label for="validationFirstName" class="form-label">First name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="validationFirstName"
+            name="firstname"
+            value="<%= candidate.firstname %>"
+            required
+          />
+          <div class="valid-feedback">Looks good!</div>
+        </div>
+        <div class="col-md-4">
+          <label for="validationLastName" class="form-label">Last name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="validationLastName"
+            name="lastname"
+            value="<%= candidate.lastname %>"
+            required
+          />
+          <div class="valid-feedback">Looks good!</div>
+        </div>
+        <div class="col-md-4">
+          <label for="validationCustomRoll" class="form-label">Roll</label>
+          <div class="input-group has-validation">
+            <span class="input-group-text" id="inputGroupPrepend">@</span>
+            <input
+              type="text"
+              class="form-control"
+              id="validationCustomRoll"
+              aria-describedby="inputGroupPrepend"
+              name="roll"
+              value="<%= candidate.roll %>"
+              required
+            />
+            <div class="invalid-feedback">Please check the roll.</div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <label for="validationCustomPostName" class="form-label">Post Name</label>
+          <select class="form-select" id="validationCustomPostName" name="postname" required>
+            <option selected disabled value="">Choose...</option>
+            <option value="AI" <%= candidate.postname === 'AI'  ? 'selected' : '' %>>AI</option>
+            <option value="Cyber Security" <%= candidate.postname === 'Cyber Security'  ? 'selected' : '' %>>Cyber Security</option>
+            <option value="Scientist 'B'" <%= candidate.postname === 'Scientist-B'  ? 'selected' : '' %>>Scientist 'B'</option>
+            <option value="Junior Research Fellow (JRF)" <%= candidate.postname === 'Junior Research Fellow (JRF)' ? 'selected' : '' %>>Junior Research Fellow (JRF)</option>
+            <option value="Senior Research Fellow (SRF)" <%= candidate.postname === 'Senior Research Fellow (SRF)' ? 'selected' : '' %>>Senior Research Fellow (SRF)</option>
+            <option value="Scientist - C" <%= candidate.postname === 'Scientist-C' ? 'selected' : '' %>>Scientist 'C'</option>
+            <option value="Scientist 'D'" <%= candidate.postname === 'Scientist-D' ? 'selected' : '' %>>Scientist 'D'</option>
+            <option value="Scientist 'E'" <%= candidate.postname === 'Scientist-E' ? 'selected' : '' %>>Scientist 'E'</option>
+            <option value="Scientist 'F'" <%= candidate.postname === 'Scientist-F' ? 'selected' : '' %>>Scientist 'F'</option>
+            <option value="Scientist 'G'" <%= candidate.postname === 'Scientist-G' ? 'selected' : '' %>>Scientist 'G'</option>
+            <option value="Technical Officer 'A'" <%= candidate.postname === 'Technical Officer-A ' ? 'selected' : '' %>>Technical Officer 'A'</option>
+            <option value="Technical Assistant" <%= candidate.postname === 'Technical Assistant' ? 'selected' : '' %>>Technical Assistant</option>
+            <option value="Administrative Officer" <%= candidate.postname === 'Administrative Officer' ? 'selected' : '' %>>Administrative Officer</option>
+            <option value="Store Officer" <%= candidate.postname === 'Store Officer' ? 'selected' : '' %>>Store Officer</option>
+            
+          
+          </select>
+          <div class="invalid-feedback">Please check the post</div>
+        </div>
+        <div class="col-md-6">
+          <label for="validationCustomExpertise" class="form-label">Expertise</label>
+          <input
+            type="text"
+            class="form-control"
+            id="validationCustomExpertise"
+            name="expertise"
+            placeholder="Enter expertise separated by commas (e.g., Java, Python, C++)"
+            required
+            value="<%= candidate.expertise ? candidate.expertise.join(', ') : '' %>" />
+          <div class="invalid-feedback">Please provide their expertise.</div>
+        </div>
+        
+        
+        <div class="col-md-3">
+          <label for="validationCustomPostCode" class="form-label">Post Code</label>
+          <select class="form-select" id="validationCustomPostCode" name="postcode" required>
+            <option selected disabled value="">Choose...</option>
+            
+            <option value="0101" <%= candidate.postcode === '0101' ? 'selected' : '' %>>0101</option>
+            
+            <option value="0201" <%= candidate.postcode === '0201' ? 'selected' : '' %>>0201</option>
+            
+            <option value="0301" <%= candidate.postcode === '0301' ? 'selected' : '' %>>0301</option>
+            
+            <option value="0401" <%= candidate.postcode === '0401' ? 'selected' : '' %>>0401</option>
+            
+            <option value="0501" <%= candidate.postcode === '0501' ? 'selected' : '' %>>0501</option>
+            
+            <option value="0601" <%= candidate.postcode === '0601' ? 'selected' : '' %>>0601</option>
+            
+            <option value="0701" <%= candidate.postcode === '0701' ? 'selected' : '' %>>0701</option>
+            
+            <option value="0801" <%= candidate.postcode === '0801' ? 'selected' : '' %>>0801</option>
+            
+            <option value="0901" <%= candidate.postcode === '0901' ? 'selected' : '' %>>0901</option>
+            
+            <option value="JRF-2024/01" <%= candidate.postcode === 'JRF-2024/01' ? 'selected' : '' %>>JRF-2024/01</option>
+            
+            <option value="JRF-2024/02" <%= candidate.postcode === 'JRF-2024/02' ? 'selected' : '' %>>JRF-2024/02</option>
+            
+            
+            <option value="JRF-2024/03" <%= candidate.postcode=== 'JRF-2024/03' ? 'selected' : '' %>>JRF-2024/03</option>
+            
+            <option value="JRF-2024/04" <%= candidate.postcode === 'JRF-2024/04' ? 'selected' : '' %>>JRF-2024/04</option>
+           
+            <option value="SRF-2024/01" <%= candidate.postcode === 'SRF-2024/01' ? 'selected' : '' %>>SRF-2024/01</option>
+           
+            <option value="SRF-2024/02" <%= candidate.postcode === 'SRF-2024/02' ? 'selected' : '' %>>SRF-2024/02</option>
+            
+            <option value="SC-0101" <%= candidate.postcode === 'SC-0101' ? 'selected' : '' %>>SC-0101</option>
+            
+            <option value="SD-0201" <%= candidate.postcode === 'SD-0201' ? 'selected' : '' %>>SD-0201</option>
+            
+            <option value="SE-0301" <%= candidate.postcode === 'SE-0301' ? 'selected' : '' %>>SE-0301</option>
+            
+            <option value="SF-0401" <%= candidate.postcode === 'SF-0401' ? 'selected' : '' %>>SF-0401</option>
+            
+            <option value="SG-0501" <%= candidate.postcode === 'SG-0501' ? 'selected' : '' %>>SG-0501</option>
+            <option>TOA-01</option>
+            <option value="TOA-01" <%= candidate.postcode === 'TOA-01' ? 'selected' : '' %>>TOA-01</option>
+            
+            <option value="TOA-02" <%= candidate.postcode === 'TOA-02' ? 'selected' : '' %>>TOA-02</option>
+            
+            <option value="TOA-03" <%= candidate.postcode === 'TOA-03' ? 'selected' : '' %>>TOA-03</option>
+            
+            <option value="TA-01" <%= candidate.postcode === 'TA-01' ? 'selected' : '' %>>TA-01</option>
+            
+            <option value="TA-02" <%= candidate.postcode === 'TA-02' ? 'selected' : '' %>>TA-02</option>
+            
+            <option value="TA-03" <%= candidate.postcode === 'TA-03' ? 'selected' : '' %>>TA-03</option>
+           
+            <option value="TA-04" <%= candidate.postcode === 'TA-04' ? 'selected' : '' %>>TA-04</option>
+            
+          </select>
+          <div class="invalid-feedback">please check  post code!</div>
+        </div>
+        <div class="col-md-3">
+          <label for="validationCustomExperience" class="form-label"
+            >Professional Experience
+          </label>
+          <select class="form-select" id="validationCustomExperience" name="experience" required>
+            <option selected disabled value="">Choose...</option>
+            
+            <option value="06 month" <%= candidate.experience === '06 month' ? 'selected' : '' %>>06 month</option>
+            
+            <option value="0.5 to 1 year" <%= candidate.experience === '0.5 to 1 year' ? 'selected' : '' %>>0.5 to 1 year</option>
+            
+            <option value="1 to 1.5 years" <%= candidate.experience === '1 to 1.5 years' ? 'selected' : '' %>>1 to 1.5 years</option>
+           
+            <option value="1.5 to 2 years" <%= candidate.experience === '1.5 to 2 years' ? 'selected' : '' %>>1.5 to 2 years</option>
+            
+            <option value="2 to 2.5 years" <%= candidate.experience === '2 to 2.5 years' ? 'selected' : '' %>>2 to 2.5 years</option>
+            
+            <option value="2.5 to 3 years" <%= candidate.experience === '2.5 to 3 years' ? 'selected' : '' %>>2.5 to 3 years</option>
+            
+            <option value="3 to 3.5 years" <%= candidate.experience === '3 to 3.5 years' ? 'selected' : '' %>>3 to 3.5 years</option>
+            
+            <option value="3.5 to 4 years" <%= candidate.experience === '3.5 to 4 years' ? 'selected' : '' %>>3.5 to 4 years</option>
+            
+            <option value="4 to 4.5 years" <%= candidate.experience === '4 to 4.5 years' ? 'selected' : '' %>>4 to 4.5 years</option>
+            
+            <option value="4.5 to 5 years" <%= candidate.experience === '4.5 to 5 years' ? 'selected' : '' %>>4.5 to 5 years</option>
+            
+            <option value="5 to 5.5 years" <%= candidate.experience === '5 to 5.5 years' ? 'selected' : '' %>>5 to 5.5 years</option>
+            
+            <option value="5.5 to 6 years" <%= candidate.experience === '5.5 to 6 years' ? 'selected' : '' %>>5.5 to 6 years</option>
+            
+            <option value="6 to 6.5 years" <%= candidate.experience === '6 to 6.5 years' ? 'selected' : '' %>>6 to 6.5 years</option>
+            
+            <option value="6.5 to 7 years" <%= candidate.experience === '6.5 to 7 years' ? 'selected' : '' %>>6.5 to 7 years</option>
+            
+            <option value="7 to 7.5 years" <%= candidate.experience === '7 to 7.5 years' ? 'selected' : '' %>>7 to 7.5 years</option>
+            
+            <option value="7.5 to 8 years" <%= candidate.experience === '7.5 to 8 years' ? 'selected' : '' %>>7.5 to 8 years</option>
+            
+            <option value="8 to 9 years" <%= candidate.experience === '8 to 9 years' ? 'selected' : '' %>>8 to 9 years</option>
+            
+            <option value="9 to 11 years" <%= candidate.experience === '9 to 11 years' ? 'selected' : '' %>>9 to 11 years</option>
+            
+            <option value="11 to 15 years" <%= candidate.experience === '11 to 15 years' ? 'selected' : '' %>>11 to 15 years</option>
+            
+            <option value="15 to 18 years" <%= candidate.experience === '15 to 18 years' ? 'selected' : '' %>>15 to 18 years</option>
+            
+            <option value="18 to 22 years" <%= candidate.experience === '18 to 22 years' ? 'selected' : '' %>>18 to 22 years</option>
+           
+            <option value="22 to 27 years" <%= candidate.experience === '22 to 27 years' ? 'selected' : '' %>>22 to 27 years</option>
+            
+            <option value="27 to 35 years<" <%= candidate.experience === '27 to 35 years<' ? 'selected' : '' %>>27 to 35 years<</option>
+          </select>
+          <div class="invalid-feedback">
+            please check the candidate experience!
+          </div>
+        </div>
+        <div class="col-12">
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              value=""
+              id="invalidCheck"
+              required
+            />
+            <label class="form-check-label" for="invalidCheck"> confirm </label>
+            <div class="invalid-feedback">
+              You must agree before submitting.
+            </div>
+          </div>
+        </div>
+        <div class="col-12">
+          <button style="border-radius:10px" style="max-width:12px"> <a class="btn btn-primary"  type="submit" style="border-radius:10px">Save Changes</a></button>
+          <button style="border-radius:10px" style="max-width:12px"><a href="/candidates-list" class="btn btn-secondary"> Cancel </a></button>
+         </div>
+      </form>
+      <% } else { %>
+        <p>Candidate Data Not Found.</p>
+      <% } %>
+    </div>
+    <script>
+      (() => {
+        "use strict";
+
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        const forms = document.querySelectorAll(".needs-validation");
+
+        // Loop over them and prevent submission
+        Array.from(forms).forEach((form) => {
+          form.addEventListener(
+            "submit",
+            (event) => {
+              if (!form.checkValidity()) {
+                event.preventDefault();
+                event.stopPropagation();
+              }
+
+              form.classList.add("was-validated");
+            },
+            false
+          );
+        });
+      })();
+    </script>
+  </body>
+</html>

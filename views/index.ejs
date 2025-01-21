@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DRDO Recruitment Portal</title>
+    <link rel="stylesheet" href="/css/styles.css" />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <%- include('partials/navbar') %>
+
+    <div class="container mt-4 jobposting">
+      <h2>Welcome to DRDO Recruitment Portal</h2>
+      <!--<p>Explore the latest job postings and opportunities.</p>-->
+      <!-- Dynamic advertisements section -->
+      <div class="row">
+        <div class="col-md-4">
+          <div class="card">
+            <img src="path/to/ad1.jpg" class="card-img-top" alt="Ad 1" />
+            <div class="card-body">
+              <h5 class="card-title">Junior Research Fellow (Post Code 1)</h5>
+              <p class="card-text">
+                First class M Sc. in Chemistry (Physical/ Analytical/ Organic/
+                Inorganic) or related fields
+              </p>
+              <a
+                href="https://www.drdo.gov.in/drdo/career/walk-interview-position-junior-research-fellows-dmsrde-kanpur-4"
+                class="btn btn-primary button1"
+                >Learn More</a
+              >
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card">
+            <img src="path/to/ad2.jpg" class="card-img-top" alt="Ad 2" />
+            <div class="card-body">
+              <h5 class="card-title">Research Associate (Post Code 2)</h5>
+              <p class="card-text">
+                Ph.D. in Biology stream, age limit 35 years.
+              </p>
+              <a
+                href="https://www.drdo.gov.in/drdo/index.php/career/walk-interview-position-research-associate-dmsrde-kanpur"
+                class="btn btn-primary button1"
+                >Learn More</a
+              >
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card">
+            <img src="path/to/ad3.jpg" class="card-img-top" alt="Ad 3" />
+            <div class="card-body">
+              <h5 class="card-title">Research Associate (Post Code 3)</h5>
+              <p class="card-text">Ph.D. in Chemistry, age limit 35 years.</p>
+              <a
+                href="https://www.drdo.gov.in/drdo/career/walk-interview-junior-research-fellowship-nstl-visakhapatnam"
+                class="btn btn-primary button1"
+                >Learn More</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <%- include('partials/footer') %>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+  </body>
+</html>

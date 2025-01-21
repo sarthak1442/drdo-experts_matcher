@@ -1,0 +1,265 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/add-candidate/style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+  </head>
+  <style>
+    h1 {
+      text-align: center;
+      margin-top: 1rem;
+    }
+  </style>
+  <body>
+    <h1>Add New Expert</h1>
+    <div class="right">
+      <form
+        class="row g-3 needs-validation"
+        action="/submit-expert"
+        method="POST"
+        novalidate
+      >
+        <div class="col-md-4">
+          <label for="validationCustom01" class="form-label">First name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="validationCustom01"
+            name="firstname"
+            required
+          />
+          <div class="valid-feedback">Looks good!</div>
+        </div>
+        <div class="col-md-4">
+          <label for="validationCustom02" class="form-label">Last name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="validationCustom02"
+            name="lastname"
+            required
+          />
+          <div class="valid-feedback">Looks good!</div>
+        </div>
+        <div class="col-md-4">
+          <label for="validationCustomUsername" class="form-label">ID</label>
+          <div class="input-group has-validation">
+            <span class="input-group-text" id="inputGroupPrepend">@</span>
+            <input
+              type="text"
+              class="form-control"
+              id="validationCustomUsername"
+              aria-describedby="inputGroupPrepend"
+              name="id"
+              required
+            />
+            <div class="invalid-feedback">Please enter the ID.</div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <label for="validationCustom04" class="form-label">Department</label>
+          <select
+            class="form-select"
+            id="validationCustom04"
+            name="department"
+            required
+          >
+            <option selected disabled value="">Choose...</option>
+            <option>Aeronautical Engineering</option>
+            <option>AI</option>
+            <option>CS</option>
+            <option>Radar</option>
+            <option>ML</option>
+            <option>Missile</option>
+            <option>Cyber Security</option>
+            <option>Electronics & Communication Engineering</option>
+            <option>Mechanical Engineering</option>
+            <option>Computer Science & Engineering</option>
+            <option>Electrical Engineering</option>
+            <option>Chemical Engineering</option>
+            <option>Material Science & Metallurgical Engineering</option>
+            <option>Physics</option>
+            <option>Chemistry</option>
+            <option>Naval Engineering</option>
+            <option>Civil Engineering</option>
+            <option>Robotics & Automation</option>
+            <option>Information Technology (IT)</option>
+            <option>Biotechnology</option>
+            <option>Instrumentation & Control Engineering</option>
+            <option>Environmental Engineering</option>
+            <option>Human Resources</option>
+            <option>Finance & Accounts</option>
+            <option>Procurement & Supply Chain Management</option>
+            <option>Quality Assurance</option>
+            <option>Legal</option>
+            <option>Advanced Computing</option>
+            <option>Radar and Surveillance Systems</option>
+            <option>Space and Missile Systems</option>
+            <option>Nanotechnology</option>
+            <option>Weapon Systems Development</option>
+            <option>...</option>
+          </select>
+          <div class="invalid-feedback">Please select the department</div>
+        </div>
+        <div class="col-md-3">
+          <label for="validationCustom04" class="form-label">Expertise</label>
+          <input
+          type="text"
+            class="form-control"
+            id="validationCustom04"
+            name="expertise"
+            required
+          />
+            
+          <div class="invalid-feedback">Please give their expertise</div>
+        </div>
+        <div class="col-md-3">
+          <label for="validationCustom04" class="form-label"
+            >Availability</label
+          >
+          <select
+            class="form-select"
+            id="validationCustom04"
+            name="availability"
+            required
+          >
+            <option selected disabled value="">Choose...</option>
+            <option>Available</option>
+            <option>Not Available</option>
+            
+          </select>
+          <div class="invalid-feedback">
+            please select if the expert is available or not!
+          </div>
+        </div>
+        <div class="col-md-3">
+          <label for="validationCustom04" class="form-label"
+            >Category</label
+          >
+          <select
+            class="form-select"
+            id="validationCustom04"
+            name="category"
+            required
+          >
+            <option selected disabled value="">Choose...</option>
+            <option>DRDO</option>
+            <option>Industry</option>
+            <option>Academia</option>
+          </select>
+          <div class="invalid-feedback">
+            please select if the expert's  category!
+          </div>
+        </div>
+        
+        <div class="col-md-3">
+          <label for="validationCustom04" class="form-label"
+            >Professional Experience
+          </label>
+          <select
+            class="form-select"
+            id="validationCustom04"
+            name="experience"
+            required
+          >
+            <option selected disabled value="">Choose...</option>
+            <option></option>
+            <option>0.5 </option>
+            <option>1 </option>
+            <option>2 </option>
+            <option>3</option>
+            <option>4</option>
+            <option>5 </option>
+            <option>6</option>
+            <option>7</option>
+            <option>8</option>
+            <option>9</option>
+            <option>10</option>
+            <option>11</option>
+            <option>12</option>
+            <option>13</option>
+            <option>14</option>
+            <option>15</option>
+            <option>16</option>
+            <option>17</option>
+            <option>18 </option>
+            <option>19</option>
+            <option>20</option>
+            <option>21</option>
+            <option>22</option>
+            <option>23</option>
+            <option>24</option>
+            <option>25</option>
+            <option>26</option>
+            <option>27</option>
+            <option>28</option>
+            <option>29</option>
+            <option>30</option>
+            <option>31 </option>
+            <option>32</option>
+            <option>33</option>
+            <option>34</option>
+            <option>...</option>
+          </select>
+          <div class="invalid-feedback">
+            please select if the expert is available or not!
+          </div>
+        </div>
+        <div class="col-12">
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              value=""
+              id="invalidCheck"
+              required
+            />
+            <label class="form-check-label" for="invalidCheck">
+              Agree to terms and conditions
+            </label>
+            <div class="invalid-feedback">
+              You must agree before submitting.
+            </div>
+          </div>
+        </div>
+        <div class="col-12">
+          <button class="btn btn-primary" type="submit">Submit form</button>
+        </div>
+      </form>
+    </div>
+    <script>
+      (() => {
+        "use strict";
+
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        const forms = document.querySelectorAll(".needs-validation");
+
+        // Loop over them and prevent submission
+        Array.from(forms).forEach((form) => {
+          form.addEventListener(
+            "submit",
+            (event) => {
+              if (!form.checkValidity()) {
+                event.preventDefault();
+                event.stopPropagation();
+              }
+
+              form.classList.add("was-validated");
+            },
+            false
+          );
+        });
+      })();
+    </script>
+  </body>
+</html>

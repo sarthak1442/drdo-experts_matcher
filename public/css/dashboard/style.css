@@ -1,0 +1,73 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+
+  align-items: center;
+  justify-content: center;
+}
+
+.nav {
+  background-color: #5a639c;
+}
+.container1 {
+  background-color: #7776b3;
+  position: relative;
+  min-height: 20px;
+  height: 75px;
+}
+
+.container1 .text {
+  text-align: center;
+  color: bisque;
+}
+.container1 ul li a {
+  color: bisque;
+  font-weight: 500;
+}
+#home {
+  color: bisque;
+  font-weight: 500;
+  text-shadow: #271e1e;
+}
+#home:hover {
+  color: #271e1e;
+  font-weight: 550;
+  border-color: aqua;
+}
+.container1 ul li a:hover {
+  color: #211a1a;
+  font-size: 22px;
+  font-weight: 550;
+  border-color: aqua;
+  border-radius: 20px;
+}
+.job-container {
+  background-color: rgb(208, 186, 229);
+  padding-top: 1rem;
+  margin-top: 3px;
+  display: flex;
+  width: 100%;
+  min-height: 46rem;
+}
+.job-post {
+  display: flex;
+  color: black;
+}
+
+h1 {
+  text-align: center;
+}
+
+h1:hover {
+  text-rendering: geometricPrecision;
+  color: rgb(71, 75, 75);
+}
+
+.container tbody tr td button  {
+  background-color: #5a639c;
+}
+.container tbody tr td button:hover  {
+  background-color: #475ce6;
+}

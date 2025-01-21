@@ -1,0 +1,48 @@
+.container {
+  padding: 1rem;
+  background-color: rgb(198, 198, 237);
+  margin-top: 20px;
+}
+h1 {
+  text-align: center;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+button {
+  color: blue;
+}
+.container table tbody tr td button {
+  background-color: rgb(94, 107, 224);
+  transition: 0.1s;
+  -webkit-transition: 0.1s;
+  -moz-transition: 0.1s;
+  -ms-transition: 0.1s;
+  -o-transition: 0.1s;
+  border-radius: 2px;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  -ms-border-radius: 2px;
+  -o-border-radius: 20px;
+}
+
+.container table tbody tr td form button {
+  color: white;
+}
+
+.container table tbody tr td button :first-child {
+  margin-right: 1px;
+  padding: 1rem;
+}
+
+.container table tbody tr td button:hover {
+  background-color: rgb(12, 27, 103);
+}
+.container table tbody tr td button a {
+  color: black;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.container table tbody tr td button a:hover {
+  color: rgb(228, 212, 212);
+  text-decoration: none;
+}
