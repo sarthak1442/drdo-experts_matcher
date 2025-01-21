@@ -1,7 +1,8 @@
 const mongoose = require("mongoose");
 const JobPost = require("./models/JobPost");
+require("dotenv").config();
 
-mongoose.connect("mongodb://localhost:27017/drdo_recruitment", {
+mongoose.connect(process.env.MONGODB_URI_DRDO, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
