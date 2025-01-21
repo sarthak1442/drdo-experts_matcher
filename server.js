@@ -18,7 +18,7 @@ const PORT = process.env.PORT || 5000;
 
 
 mongoose
-  .connect(process.env.MONGODB_URI_DRDO", {
+  .connect(process.env.MONGODB_URI_DRDO, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
@@ -31,7 +31,7 @@ mongoose
 
 // Connect to Candidates Database
 const candidatesDB = mongoose.createConnection(
-  process.env.MONGODB_URI_CANDIDATES",
+  process.env.MONGODB_URI_CANDIDATES,
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,
