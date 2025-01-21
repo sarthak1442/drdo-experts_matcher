@@ -11,14 +11,14 @@ const authRouter = require("./routes/authRoutes");
 const jobController = require("./controllers/jobController");
 const { authMiddleware } = require("./middlewares/authMiddleware");
 const { ObjectId } = require("mongodb").ObjectId;
-
+require("dotenv").config();
 const app = express();
 const PORT = process.env.PORT || 5000;
 
 
 
 mongoose
-  .connect("mongodb://localhost:27017/drdo_recruitment", {
+  .connect(process.env.MONGODB_URI_DRDO", {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
@@ -31,7 +31,7 @@ mongoose
 
 // Connect to Candidates Database
 const candidatesDB = mongoose.createConnection(
-  "mongodb://localhost:27017/candidatesDB",
+  process.env.MONGODB_URI_CANDIDATES",
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,
@@ -39,7 +39,7 @@ const candidatesDB = mongoose.createConnection(
 );
 // Connect to Experts Database
 const expertsDB = mongoose.createConnection(
-  "mongodb://localhost:27017/expertsDB",
+  process.env.MONGODB_URI_EXPERTS,
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,
@@ -56,7 +56,7 @@ app.use(
     resave: false,
     saveUninitialized: false,
     store: MongoStore.create({
-      mongoUrl: "mongodb://localhost:27017/drdo_recruitment",
+      mongoUrl:process.env.MONGODB_URI_DRDO,
       collectionName: "sessions",
     }),
     cookie: {
