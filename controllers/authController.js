@@ -1,5 +1,3 @@
-
-
 const Admin = require("../models/admin");
 const bcrypt = require("bcrypt");
 
@@ -35,7 +33,7 @@ exports.signup = async (req, res) => {
     // Set session and redirect to dashboard
     req.session.user = newAdmin;
     res.redirect("/Job-dashboard");
-    //res.render("admin-dashboard");
+    
   } catch (error) {
     console.error(error);
     res.render("signup", { error: "An error occurred during signup" });
@@ -67,7 +65,7 @@ exports.login = async (req, res) => {
     // Set session and redirect to dashboard
     req.session.user = user;
     res.redirect("/Job-dashboard");
-    //res.render("admin-dashboard");
+    
   } catch (error) {
     console.error(error);
     res.render("login", { error: "An error occurred during login" });
@@ -90,6 +88,3 @@ exports.logout = (req, res) => {
 exports.getAddCandidatePage = (req, res) => {
   res.render("add-candidate");
 };
-
-// Handle Login Logic
-
