@@ -3,7 +3,6 @@ const JobPost = require("../models/JobPost");
 exports.getAdminDashboard = async (req, res) => {
   try {
     const jobPosts = await JobPost.find({});
-    /*res.render("admin-dashboard", { jobPosts });*/
     console.log("Fetched job posts:", jobPosts);
     res.render("Job-dashboard", { jobPosts: jobPosts || [] });
   } catch (err) {
