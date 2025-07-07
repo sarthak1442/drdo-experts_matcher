@@ -10,8 +10,7 @@ require("dotenv").config();
 const authRouter = require("./routes/authRoutes");
 const jobController = require("./controllers/jobController");
 const { authMiddleware } = require("./middlewares/authMiddleware");
-const { ObjectId } = require("mongodb").ObjectId;
-require("dotenv").config();
+//const { ObjectId } = require("mongodb").ObjectId;
 const app = express();
 const PORT = process.env.PORT || 5000;
 
@@ -46,8 +45,8 @@ const expertsDB = mongoose.createConnection(
   }
 );
 
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
+//app.use(bodyParser.json());
+//app.use(bodyParser.urlencoded({ extended: true }));
 
 // Session Configuration
 app.use(
@@ -84,8 +83,7 @@ app.set("views", path.join(__dirname, "views"));
 // Set the public directory for serving static files
 app.use(express.static(path.join(__dirname, "public")));
 
-// Apply authentication middleware to all routes
-app.use(authMiddleware);
+
 
 app.get("/admin-dashboard", (req, res) => {
   res.render("admin-dashboard", { user: req.session.user });
@@ -178,6 +176,9 @@ app.use("/auth", authRouter);
 app.get("/", (req, res) => {
   res.render("index", { user: req.session.user });
 });
+
+// Apply authentication middleware to all routes
+app.use(authMiddleware);
 
 app.get("/add-candidate", (req, res) => {
   res.render("add-candidate", { user: req.session.user });
