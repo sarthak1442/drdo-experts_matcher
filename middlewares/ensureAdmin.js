@@ -1,7 +1,7 @@
 module.exports = (req, res, next) => {
-  // Dummy check, replace with actual logic
+  const user = req.session.user;
   if (req.user && req.user.isAdmin) {
     return next();
   }
-  return res.redirect("/login");
+  res.redirect("/login");
 };
